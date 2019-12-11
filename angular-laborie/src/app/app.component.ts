@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template : '<h1>Gestion des rapports de visite</h1>',
+  template : `<h1>Gestion des rapports de visite</h1>
+              <app-connexion></app-connexion>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
