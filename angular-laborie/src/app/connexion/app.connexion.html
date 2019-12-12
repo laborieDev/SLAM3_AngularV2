@@ -2,7 +2,7 @@
     {{titre}}
 </h1>
 
-<form class="col-lg-6" name = "frmLgn" (nbSumbit)="valider()">
+<form class="col-lg-6" name = "frmLgn" (ngSubmit)="valider()">
     <div class="form-group">
         <label for="login">Identifiant :</label><br>
         <input type="text" name="lg" [(ngModel)]="login" /><br>
@@ -11,6 +11,8 @@
         <label for="mdp">Mot de passe :</label><br>
         <input type="password" name="mdp" [(ngModel)]="password"/><br>
     </div>
+    <br>
+    <div class="alert alert-danger" [hidden]="estCache()">{{lblMessage}}</div>
     <button type="submit">Valider</button>
+    
 </form>
-<p>{{login}} {{password}}</p>
