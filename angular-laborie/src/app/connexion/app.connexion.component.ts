@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from './services/app.services.data';
+
 @Component({
   selector: 'app-connexion',
   templateUrl : 'app.connexion.html',
@@ -11,15 +14,19 @@ export class ConnexionComponent {
     password : string;
     lblMessage : string;
     noErreur : boolean = true;
-    
-    valider():void{
-        if(this.login == "laborie" && this.password == "anthony"){
+    visiteur: any;
+    constructor(private dataService : DataService, private router : Router){};
 
-        }
-        else{
-            this.lblMessage = "Identifiant ou mot de passe incorrect";
-            this.noErreur = false;
-        }
+    valider():void{
+        this.dataService.connexion(this.login, this.password)
+            .subscribe(
+                (data) => {
+                    this.router.navigate(['accueil']);
+                },
+                (error) => { 
+                    this.lblMessage = "Identifiant ou mot de passe incorrect";
+                    this.noErreur = false;}
+            );
     }
 
     estCache():boolean{
