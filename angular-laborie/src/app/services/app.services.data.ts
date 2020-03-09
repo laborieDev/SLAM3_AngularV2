@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
-    private  urlDomaine :  string = "http://localhost:4200";
+    private  urlDomaine :  string = "http://localhost:8888/restGSB/";
     constructor(private http: Http) {}
     public connexion( loginIn : string, mdpIn : string ) : Observable<string[]> {
          let url :string = this.urlDomaine + "/connexion?login=" + loginIn + "&mdp=" + mdpIn;
