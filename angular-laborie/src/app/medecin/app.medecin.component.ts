@@ -3,4 +3,6 @@ import { Component } from '@angular/core';
   selector: 'app-medecin',
   templateUrl : 'app.medecin.html'
 })
-export class Medecin {}
+export class Medecin {
+  legende : string="Rechercher le médecin...";
+}
