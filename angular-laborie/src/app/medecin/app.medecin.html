@@ -1,7 +1,14 @@
-
+<app-navbar></app-navbar>
 <h2>
     {{legende}}
 </h2>
+<nav class="navbar navbar-inverse" [hidden]="estCacheMenu">
+        <ul class="nav navbar-nav"
+            style="display : flex; flex-direction:row; justify-content:center">
+            <li><a (click)="derniersRapports()">Derniers rapports</a></li>
+            <li><a (click)="majMedecin()">MàJ</a></li>
+        </ul>
+</nav>
 <div class="col-lg-6">
     <div class="form-group">
         <input type="search" placeholder="Nom du médecin..." [(ngModel)]="nomMedecin" (heyup)="charger()"/>
