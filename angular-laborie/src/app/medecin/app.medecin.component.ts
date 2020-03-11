@@ -61,7 +61,6 @@ export class Medecin {
   }
 
   validerMaJMedecin(): void{
-
     this.dataService.majMedecin(this.medecin.id, this.medecin.adresse, this.medecin.tel, this.medecin.spe)
                     .subscribe( 
                       (data)=>{}       
