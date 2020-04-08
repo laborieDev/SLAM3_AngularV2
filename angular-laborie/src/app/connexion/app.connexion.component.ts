@@ -21,6 +21,7 @@ export class ConnexionComponent {
         this.dataService.connexion(this.login, this.password)
             .subscribe(
                 (data) => {
+                    this.dataService.visiteur = data;
                     this.router.navigate(['accueil']);
                 },
                 (error) => { 
